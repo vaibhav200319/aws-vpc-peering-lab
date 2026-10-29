@@ -1,0 +1,7 @@
+flowchart LR
+    A["VPC 1: my-vpc1<br/>10.0.0.0/16"] <-->|"VPC Peering"| P["Peering connection"]
+    P <-->|"VPC Peering"| B["VPC 2: my-vpc2<br/>10.1.0.0/16"]
+    A --- R1["Route to 10.1.0.0/16"]
+    B --- R2["Route to 10.0.0.0/16"]
+    A --- S1["ICMP from 10.1.0.0/16"]
+    B --- S2["ICMP from 10.0.0.0/16"]
